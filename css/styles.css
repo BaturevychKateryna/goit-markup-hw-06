@@ -452,7 +452,20 @@ body{
     align-items: baseline;
     gap: 70px;
 }
+.footer-subscription {
+    display: flex;
+    gap: 12px;
 
+}
+.footer-subscription-email {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: #2F303A;
+    width: 358px;
+    height: 50px;
+    padding-left: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
 /* Додаткове оформлення для Портфоліо */
 /* Кнопки */
 .page .page-button {
@@ -567,7 +580,7 @@ body{
     width: 100%;
     height: 100%;
     background: var(--background-backdrop);
-    transition-property: opacity;
+    transition-property: opacity, visibility;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
