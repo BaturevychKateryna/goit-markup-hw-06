@@ -464,8 +464,29 @@ body{
     width: 358px;
     height: 50px;
     padding-left: 16px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--additional-text-transparent);
 }
+.footer-subscription-buttom {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: var(--accent-color-blue);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    color: var(--accent-color-white);
+    fill: var(--accent-color-white);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+}
+
 /* Додаткове оформлення для Портфоліо */
 /* Кнопки */
 .page .page-button {
@@ -586,8 +607,7 @@ body{
 }
 .modal {
     display: flex;
-    justify-content: end;
-    align-items: flex-start;
+    justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -596,10 +616,12 @@ body{
     max-width: 528px;
     height: 100%;
     max-height: 581px;
+    padding: 40px;
     background: var(--accent-color-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
+
 .is-hidden {
     opacity: 0;
     visibility: hidden;
@@ -607,13 +629,149 @@ body{
 }
 .modal-buttom {
     display: flex;
+    position: absolute;
+    top: 8px;
+    right: 8px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     width: 30px;
     height: 30px;
-    margin-top: 8px;
-    margin-right: 8px;
     border-radius: 50%;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-buttom:hover, .modal-buttom:focus {
+    fill: var(--accent-color-blue);
+}
+.request p {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+.form-field {
+    position: relative;
+    width: 448px;
+}
+.form-field label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--tittle-text-color);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+}
+
+.form-field input {
+    margin-bottom: 10px;
+    width: 100%;
+    border: rgba(33, 33, 33, 0.2) solid 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 11px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 40px;
+    outline: none;
+    transition-property: fill, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-field input:focus + .input-icon {
+    fill: var(--accent-color-blue);
+}
+.form-field input:focus {
+    border-color: var(--accent-color-blue);
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 30px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    /* margin: 11px 12px;  */
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} 
+.form-field textarea {
+    display: block;
+    resize: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+    width: 100%;
+    border: rgba(33, 33, 33, 0.2) solid 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+.form-field textarea:focus {
+    border-color: var(--accent-color-blue);
+}
+.form-buttom {
+display: block;
+margin-left: auto;
+margin-right: auto;
+padding: 10px 52px;
+width: 200px;
+height: 50px;
+font-weight: 700;
+font-size: 16px;
+line-height: 1.9;
+letter-spacing: 0.06em;
+color: var(--accent-color-white);
+background-color: var(--accent-color-blue);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+border-radius: 4px;
+border: none;
+}
+
+.label-checkbox {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+    margin-left: 13.5px;
+}
+.checkbox {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+.svg-checkbox {
+    border:2px solid var(--primary-text-color);
+    border-radius: 2px;
+    margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.label-checkbox a {
+    color: var(--accent-color-blue);
+    margin-left: 5px;
+    text-decoration-skip-ink: none;
+}
+.checkbox:checked + .svg-checkbox {
+    border-color: transparent;
+    background-color: var(--accent-color-blue);
+    fill: var(--accent-color-white);
 }
